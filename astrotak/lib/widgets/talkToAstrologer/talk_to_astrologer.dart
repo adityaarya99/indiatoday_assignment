@@ -24,7 +24,7 @@ class _TalkToAstrologerState extends State<TalkToAstrologer> {
           BlocProvider.of<AstroBloc>(context).add(FetchAstroData());
         }
         if(state.entries!= null){
-          log("entries: ${state.entries!.length}");
+          // log("entries: ${state.entries!.length}");
           return _buildBody(context, state);
         }
         return EmptyScreen();

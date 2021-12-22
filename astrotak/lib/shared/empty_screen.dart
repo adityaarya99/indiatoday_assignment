@@ -9,6 +9,6 @@ class EmptyScreen extends StatefulWidget {
 class _EmptyScreenState extends State<EmptyScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Data is not loaded'));
+    return CupertinoActivityIndicator();
   }
 }

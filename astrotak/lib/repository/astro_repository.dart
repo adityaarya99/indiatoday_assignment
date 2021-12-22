@@ -9,16 +9,16 @@ class AstroRepo extends FetchClient{
 
 
   Future<List<AstroModel>> fetchAll() async {
-    final uri = Uri.parse('https://www.astrotak.com/astroapi/api/agent/all');
+    final uri = Uri.parse('http://www.astrotak.com/astroapi/api/agent/all');
     print('${uri} -> (This is the uri)');
 
     final Response<dynamic> response = await super.fetchData(uri);
-      print('${response} -> (This is the reponse)');
+      print('${response} -> (This is the response)');
 
     if (response.statusCode != 200) {
       throw HttpException(response.data['detail']);
     }
 
-    return AstroModel.toList(response.data);
+    return AstroModel.toList(response.data['data']);
   }
 }
